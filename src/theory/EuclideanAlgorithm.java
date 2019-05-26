@@ -10,6 +10,24 @@ public class EuclideanAlgorithm {
     private int r1;
 
     /**
+     * Method: gcd
+     * Great Common Divisor
+     * This method uses Euclidean algorithm to calculate GCD of two numbers.
+     * **/
+    public static int gcd(int r0, int r1) {
+        int rr0=Math.max(r0,r1), rr1=Math.min(r0,r1);
+        r0=rr0; r1=rr1;
+        int r = r0%r1;
+        while (r!=0) {
+            r0=r1;
+            r1=r;
+            r=r0%r1;
+        }
+        return r1;
+    }
+
+    /**
+     * Method: ea_gcd
      * Euclidean Algorithm
      * This method prints out table of calculation procedure.
      * **/
@@ -30,6 +48,7 @@ public class EuclideanAlgorithm {
     }
 
     /**
+     * Method: eea_gcd
      * Extended Euclidean Algorithm
      * This method prints out table of calculation procedure.
      * **/
@@ -66,9 +85,9 @@ public class EuclideanAlgorithm {
      * Test the methods here.
      * **/
     public static void main(String[] args) {
-        ea_gcd(973,301);
-        ea_gcd(2010,1404);
-        eea_gcd(301,973);
-        eea_gcd(2010,1404);
+//        ea_gcd(973,301);
+//        ea_gcd(2010,1404);
+        eea_gcd(935,231);
+        eea_gcd(3570,2431);
     }
 }
